@@ -1,12 +1,17 @@
-<div class="hero-unit">
-	<h1>Welcome to One Month Rails!</h1>
-	<p>
-		You've found the home page for the
-		<%= link_to "One Month Rails", "http://onemonthrails.com" %>
-		application.
-	</p>
-	<p> 
-		This was built by kat calvin, she of the Devonshire Calvins. More information can be found at <%= link_to "Kat Calvin dot com!", "http://katcalvin.com", class: "btn btn-primary btn-large" %>
-		Check it out! Wow, that's super geeky.
-	</p>
-</div>
+<% if user_signed_in? %>
+	<h1>You're logged in!</h1>
+<% else %>
+
+	<div class="hero-unit">
+		<h1>Welcome to One Month Rails!</h1>
+		<p>
+			You've found the home page for the
+			<%= link_to "One Month Rails", "http://onemonthrails.com" %>
+			application.
+		</p>
+		<p> 
+			This was built by kat calvin, she of the Devonshire Calvins. More information can be found at <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
+			Check it out! Wow, that's super geeky.
+		</p>
+	</div>
+<% end %>	
